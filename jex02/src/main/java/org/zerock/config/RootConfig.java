@@ -13,7 +13,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@ComponentScan(basePackages = "org.zerock.service")
+@ComponentScan(basePackages = "org.zerock.*")
 @MapperScan(basePackages = {"org.zerock.mapper"})
 public class RootConfig {
 	@Bean
