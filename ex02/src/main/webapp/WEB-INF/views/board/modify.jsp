@@ -18,9 +18,11 @@
 </div>
 <div class="row">
 	<div class="col-lg-12">
-		<div class="panel-heading">Board modify</div>
+		<div class="panel-heading">Board modify Page</div>
 		<div class="panel-body">
 			<form action="/board/modify" method="post" role="form">
+				<!--<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum }"/>' >
+				<input type="hidden" name="amount" value='<c:out value="${cri.amount }"/>' >-->
 				<div class="form-group">
 					<label>Bno</label><input name="bno" class="form-control" value='<c:out value="${board.bno }"/>' readonly="readonly">
 				</div>
@@ -32,7 +34,7 @@
 					<textarea name="content" rows="3" class="form-control" ><c:out value="${board.content}" /></textarea>
 				</div>
 				<div class="form-group">
-					<label>Writer</label><input name="writer" class="form-control" value='<c:out value="${board.title}"/>' readonly="readonly">
+					<label>Writer</label><input name="writer" class="form-control" value='<c:out value="${board.writer}"/>' readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label>RegDate</label><input name="regDate" class="form-control" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${board.regdate}"/>' readonly="readonly">
@@ -41,20 +43,16 @@
 					<label>Update Date<input name="updateDate" class="form-control" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${board.updateDate}"/>' readonly="readonly">
 				</div>
 				<button type="submit" class="btn btn-default" data-oper="modify" >Modify</button>
-				<button type="submit" class="btn btn-danger" data-oper="remove" >Remove</button>
+
 				<button type="submit" class="btn btn-info" data-oper="list" onclick="location.href='/board/list'">List</button>
-				<a href="javascript:deleteConfirm()">삭제</a>
-			</form>
+				</form>
+				<form action="/board/remove" method="post">
+					<input type="hidden" name="bno"  value='<c:out value="${board.bno }"/>'>
+					<input type="submit" class="btn btn-danger btn-mb-3" value="Remove">
+				</form>
 		</div>
 	</div>
 </div>
-<script>
-	function deleteConfirm(){
-		const isDelete=confirm("${bno}번 삭제??");
-		if(isDelete){
-			location.href="/board/remove";
-		}
-	}
-</script>
+
 </body>
 </html>

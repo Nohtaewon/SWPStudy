@@ -81,7 +81,7 @@ public class BoardControllerTests {
 		
 		log.info(resultPage);
 	}*/
-	
+	/*
 	@Test
 	public void testRemove() throws Exception{
 		//삭제전 데이터 베이스에 게시물 번호 확인할 것
@@ -89,5 +89,13 @@ public class BoardControllerTests {
 				.param("bno", "17")).andReturn().getModelAndView().getViewName();
 		
 		log.info(resultPage);
+	}*/
+	@Test
+	public void testListPaging() throws Exception{
+		log.info(
+			mockMvc.perform(MockMvcRequestBuilders.get("/board/list")
+			.param("pageNum", "1")
+			.param("amount", "50"))
+			.andReturn().getModelAndView().getModelMap());			
 	}
 }

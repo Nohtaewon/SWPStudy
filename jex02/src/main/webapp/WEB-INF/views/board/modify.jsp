@@ -21,6 +21,8 @@
 		<div class="panel-heading">Board modify</div>
 		<div class="panel-body">
 			<form action="/board/modify" method="post" role="form">
+				<!-- <input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum }"/>' >
+				<input type="hidden" name="amount" value='<c:out value="${cri.amount }"/>' >-->
 				<div class="form-group">
 					<label>Bno</label><input name="bno" class="form-control" value='<c:out value="${board.bno }"/>' readonly="readonly">
 				</div>
@@ -32,7 +34,7 @@
 					<textarea name="content" rows="3" class="form-control" ><c:out value="${board.content}" /></textarea>
 				</div>
 				<div class="form-group">
-					<label>Writer</label><input name="writer" class="form-control" value='<c:out value="${board.title}"/>' readonly="readonly">
+					<label>Writer</label><input name="writer" class="form-control" value='<c:out value="${board.writer}"/>' readonly="readonly">
 				</div>
 				<div class="form-group">
 					<label>RegDate</label><input name="regDate" class="form-control" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${board.regdate}"/>' readonly="readonly">

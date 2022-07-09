@@ -35,6 +35,11 @@
 				</div>
 				<button class="btn btn-default" data-oper="modify" onclick="location.href='/board/modify?bno=<c:out value="${board.bno}"/>'">Modify Button</button>
 				<button class="btn btn-info" data-oper="list" onclick="location.href='/board/list'">List</button>
+				<!--<form action="/board/modify" method="get" id="operForm">
+					<input type="hidden" id="bno" name="bno" value='<c:out value="${board.bno }"/>'>
+					<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum }"/>'>
+					<input type="hidden" name="amount" value='<c:out value="${cri.amount }"/>'>
+				</form>-->
 		</div>
 	</div>
 </div>
